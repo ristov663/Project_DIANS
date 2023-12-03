@@ -1,0 +1,37 @@
+﻿﻿@model OnlineArtGalleryProject.Models.PaintingArtist
+@{
+    ViewBag.Title = "AddNewArtist";
+}
+
+<h2>Adding new Artist</h2>
+<hr />
+<div style="background-image: url(https://img.freepik.com/premium-photo/delicate-yellow-abstract-watercolor-background_3590-82.jpg?w=2000);">
+
+    <div class="form-horizontal" style="position: relative; margin-left: 50px;">
+        <br />
+        <br /><br /><br />
+        <h4>Adding new Artist</h4>
+
+        
+
+
+        @using (Html.BeginForm("AddNewArtist", "Paintings"))
+        {
+
+            <div class="form-control" style="width: 300px;">
+                @Html.Label("Artist to Add")
+                @Html.DropDownListFor(m => m.ArtistId, new SelectList(Model.Artists, "Id", "Name"))
+            </div>
+
+            @Html.HiddenFor(m => m.PaintingId)
+
+            <br /><br />
+
+            <button type="submit" class="btn btn-success" style="background-color: darkorange;">Add Artist</button>
+
+        }
+
+        <br /><br /><br />
+    </div>
+</div>
+
