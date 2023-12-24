@@ -1,0 +1,52 @@
+﻿@model OnlineArtGalleryProject.Models.Artist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for Builder/Designer</h2>
+
+<hr />
+<div style="background-image: url(https://img.freepik.com/free-photo/fresh-green-textured-stucco-wall-background_23-2148320403.jpg?w=2000);">
+
+    <div class="form-horizontal" style="position: relative; margin-left: 100px;">
+
+        <br /><br />
+
+        <div>
+            <h4>Builder/Designer</h4>
+            <br />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Biography)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Biography)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ImageURL)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ImageURL)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+        <br />
+        </div>
+</div>

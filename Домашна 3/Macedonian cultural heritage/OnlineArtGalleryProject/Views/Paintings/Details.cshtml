@@ -1,0 +1,88 @@
+﻿@model OnlineArtGalleryProject.Models.Painting
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for Monument</h2>
+
+<hr />
+<div style="background-image: url(https://img.freepik.com/free-photo/fresh-green-textured-stucco-wall-background_23-2148320403.jpg?w=2000);">
+
+    <div class="form-horizontal" style="position: relative; margin-left: 100px;">
+
+        <br /><br />
+
+        <div>
+            <h4>Monument</h4>
+            <br />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ArtGallery.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ArtGallery.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ImageURL)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ImageURL)
+                </dd>
+
+            </dl>
+        </div>
+
+        @Html.ActionLink("Add Monument", "AddNewArtist", new { id = Model.Id })
+
+        <ul>
+            @foreach (var artist in Model.Artists)
+            {
+                <li>
+                    @artist.Name | @Html.ActionLink("Delete Monument", "DeleteArtist", new { paintingId = Model.Id, artistId = artist.Id })
+                </li>
+            }
+        </ul>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+        <br />
+        </div>
+</div>
